@@ -1,0 +1,11 @@
+tasks:
+  Get Current Temperature:
+    robotTaskName: Get Current Temperature
+condaConfigFile: conda.yaml
+ignoreFiles:
+- .gitignore
+artifactsDir: output
+PATH:
+- .
+PYTHONPATH:
+- .

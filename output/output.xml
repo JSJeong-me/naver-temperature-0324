@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20230324 11:11:19.793" rpa="true" schemaversion="3">
+<suite id="s1" name="Temperature" source="C:\Users\oakyo\Documents\Robots\naver-temperature\temperature">
+<suite id="s1-s1" name="Tasks" source="C:\Users\oakyo\Documents\Robots\naver-temperature\temperature\tasks.robot">
+<test id="s1-s1-t1" name="Get Current Temperature" line="11">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>${url}</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20230324 11:11:21.676" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20230324 11:11:21.690" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20230324 11:11:24.294" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20230324 11:11:25.681" level="INFO">Created Chrome browser with arguments: --disable-dev-shm-usage --disable-web-security --allow-running-insecure-content --no-sandbox</msg>
+<msg timestamp="20230324 11:11:25.681" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20230324 11:11:25.681" level="INFO">Opening url 'https://search.naver.com/search.naver?sm=tab_hty.top&amp;where=nexearch&amp;query=%EC%84%9C%EC%9A%B8+%EC%A2%85%EB%A1%9C%EA%B5%AC+%EC%B2%AD%EC%9A%B4%EB%8F%99+%EB%82%A0%EC%94%A8&amp;oquery=%EC%84%9C%EC%9A%B8+%EC%A2%85%EB%A1%9C%EA%B5%AC+%EB%82%A0%EC%94%A8&amp;tqi=it0aIwp0YihssjwdNB0ssssssYs-196670'</msg>
+<status status="PASS" starttime="20230324 11:11:21.674" endtime="20230324 11:11:26.765"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230324 11:11:36.769" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230324 11:11:26.765" endtime="20230324 11:11:36.769"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="RPA.Browser.Selenium">
+<arg>//*[@id="main_pack"]/section[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[2]/strong</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230324 11:11:36.770" endtime="20230324 11:11:36.811"/>
+</kw>
+<kw name="Get Text" library="RPA.Browser.Selenium">
+<var>${temperature}</var>
+<arg>//*[@id="main_pack"]/section[1]/div[1]/div[2]/div[1]/div[1]/div/div[2]/div/div[1]/div[1]/div[2]/strong</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230324 11:11:36.846" level="INFO">${temperature} = 현재 온도
+13.1°</msg>
+<status status="PASS" starttime="20230324 11:11:36.811" endtime="20230324 11:11:36.846"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>The current temperature is ${temperature}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230324 11:11:36.847" level="INFO">The current temperature is 현재 온도
+13.1°</msg>
+<status status="PASS" starttime="20230324 11:11:36.847" endtime="20230324 11:11:36.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230324 11:11:46.862" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230324 11:11:36.848" endtime="20230324 11:11:46.862"/>
+</kw>
+<kw name="Close All Browsers" library="RPA.Browser.Selenium">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230324 11:11:46.863" endtime="20230324 11:11:49.189"/>
+</kw>
+<status status="PASS" starttime="20230324 11:11:21.672" endtime="20230324 11:11:49.190"/>
+</test>
+<status status="PASS" starttime="20230324 11:11:19.876" endtime="20230324 11:11:49.191"/>
+</suite>
+<status status="PASS" starttime="20230324 11:11:19.850" endtime="20230324 11:11:49.193"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Temperature">Temperature</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tasks">Temperature.Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
